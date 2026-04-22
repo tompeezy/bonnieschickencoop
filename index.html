@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonnie's Chicken Coop | Salisbury, NC</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Georgia, serif; background: #fdf8f0; color: #2c2c2c; }
+nav { background: #3a5a2b; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+.brand { display: flex; align-items: center; gap: 12px; padding: 14px 0; text-decoration: none; }
+.brand-name { font-size: 18px; font-weight: bold; color: white; }
+.brand-tag { font-size: 11px; color: #c8e6b0; }
+nav a { color: #c8e6b0; text-decoration: none; padding: 8px 14px; font-size: 14px; font-family: Arial; }
+.hero { background: linear-gradient(135deg, #2d4a1e, #4a7a30, #3a5a2b); color: white; padding: 80px 24px; text-align: center; }
+.hero h1 { font-size: 48px; margin-bottom: 16px; }
+.hero h1 span { color: #f5d78a; }
+.hero p { font-size: 18px; max-width: 600px; margin: 0 auto 32px; font-family: Arial; line-height: 1.6; }
+.badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 8px 18px; border-radius: 99px; font-size: 13px; font-family: Arial; }
+.btn-gold { display: inline-block; background: #c9962a; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 16px; font-weight: bold; font-family: Arial; }
+.btn-out { display: inline-block; background: transparent; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 16px; font-weight: bold; font-family: Arial; border: 2px solid rgba(255,255,255,0.5); margin-left: 12px; }
+section { padding: 60px 24px; }
+.wrap { max-width: 1100px; margin: 0 auto; }
+.sec-title { text-align: center; font-size: 32px; color: #3a5a2b; margin-bottom: 8px; }
+.divider { width: 60px; height: 3px; background: #c9962a; margin: 12px auto 32px; }
+.sec-sub { text-align: center; color: #666; font-family: Arial; font-size: 15px; margin-bottom: 40px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.card { background: white; border-radius: 12px; border: 1px solid #e0d5c5; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.card img { width: 100%; height: 240px; object-fit: cover; display: block; }
+.card-body { padding: 20px; }
+.card-body h3 { font-size: 22px; color: #3a5a2b; margin-bottom: 8px; }
+.card-body p { font-family: Arial; font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 12px; }
+.price { font-size: 24px; font-weight: bold; color: #8b5e3c; margin-bottom: 4px; }
+.note { font-size: 12px; color: #888; font-family: Arial; margin-bottom: 14px; }
+.btn-green { display: block; text-align: center; background: #3a5a2b; color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-family: Arial; font-weight: bold; font-size: 15px; }
+.alert { background: #fff8e1; border: 1px solid #c9962a; border-radius: 8px; padding: 16px 20px; margin-bottom: 32px; font-family: Arial; font-size: 14px; color: #5a4000; }
+.ship-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.ship-card { background: white; border-radius: 10px; padding: 24px; border: 1px solid #e0d5c5; text-align: center; }
+.ship-card .ico { font-size: 40px; margin-bottom: 12px; }
+.ship-card h3 { font-size: 17px; color: #3a5a2b; margin-bottom: 8px; }
+.ship-card p { font-size: 13px; color: #555; font-family: Arial; line-height: 1.6; }
+.gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.gal img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 3px solid #e0d5c5; cursor: pointer; transition: transform 0.2s; }
+.gal img:hover { transform: scale(1.02); }
+.contact-bg { background: #3a5a2b; }
+.contact-bg .sec-title { color: white; }
+.contact-bg .sec-sub { color: #c8e6b0; }
+.cg { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 800px; margin: 0 auto; }
+.ci h3 { font-size: 20px; margin-bottom: 16px; color: #f5d78a; }
+.ci p { font-family: Arial; font-size: 14px; line-height: 2; color: #c8e6b0; }
+.cf input, .cf textarea, .cf select { width: 100%; padding: 10px 14px; border-radius: 6px; border: none; margin-bottom: 12px; font-family: Arial; font-size: 14px; background: rgba(255,255,255,0.9); color: #2c2c2c; }
+.cf textarea { height: 100px; resize: vertical; }
+.cf button { width: 100%; background: #c9962a; color: white; border: none; padding: 12px; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; font-family: Arial; }
+.lb { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center; }
+.lb.open { display: flex; }
+.lb img { max-width: 90vw; max-height: 90vh; border-radius: 8px; }
+.lb-x { position: absolute; top: 20px; right: 24px; font-size: 36px; color: white; cursor: pointer; }
+footer { background: #1a2e10; color: #aaa; text-align: center; padding: 24px; font-family: Arial; font-size: 13px; }
+@media(max-width:600px){.cg{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="brand">
+    <div style="font-size:28px">🐔</div>
+    <div><div class="brand-name">Bonnie's Chicken Coop</div><div class="brand-tag">Salisbury, NC · Est. 2024</div></div>
+  </a>
+  <div><a href="#breeds">Breeds</a><a href="#eggs">Hatching Eggs</a><a href="#shipping">Shipping</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
+</nav>
+
+<div class="hero">
+  <h1>Quality Chickens &<br><span>Hatching Eggs</span></h1>
+  <p>Pasture-raised, healthy birds from Salisbury, NC. Rare breeds, fertile hatching eggs, and day-old chicks available. Local pickup and egg shipping nationwide.</p>
+  <div class="badges">
+    <div class="badge">🌿 Pasture Raised</div>
+    <div class="badge">🥚 Fertile Hatching Eggs</div>
+    <div class="badge">🐣 Day-Old Chicks</div>
+    <div class="badge">📦 Eggs Ship Nationwide</div>
+  </div>
+  <a href="#breeds" class="btn-gold">View Available Birds</a>
+  <a href="#contact" class="btn-out">Contact Us</a>
+</div>
+
+<section id="breeds" style="background:white">
+  <div class="wrap">
+    <h2 class="sec-title">🐓 Available Breeds</h2>
+    <div class="divider"></div>
+    <div class="alert">⚠️ <strong>Local Pickup Only</strong> for live birds. Located in Salisbury, NC. Hatching eggs ship nationwide. Contact us to check current availability.</div>
+    <div class="grid">
+
+      <div class="card">
+        <img src="images/cemani-rooster.jpg" alt="Ayam Cemani Rooster">
+        <div class="card-body">
+          <h3>Ayam Cemani</h3>
+          <p>The rarest chicken in the world. Completely black — feathers, skin, bones, and organs. An exotic showstopper highly sought after by collectors and poultry enthusiasts worldwide.</p>
+          <div class="price">$200 – $400 / bird</div>
+          <div class="note">Hatching eggs also available · Local pickup only for live birds</div>
+          <a href="#contact" class="btn-green">Inquire About Availability</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/rir.jpg" alt="Rhode Island Red">
+        <div class="card-body">
+          <h3>Rhode Island Red</h3>
+          <p>America's most popular dual-purpose breed. Outstanding egg layers producing 250-300 large brown eggs per year. Hardy, calm temperament — perfect for any backyard flock.</p>
+          <div class="price">$25 – $45 / bird</div>
+          <div class="note">Pullets · Roosters · Hatching eggs available</div>
+          <a href="#contact" class="btn-green">Inquire About Availability</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/zombie.jpg" alt="Zombie Chickens">
+        <div class="card-body">
+          <h3>🧟 Zombie Chickens</h3>
+          <p>Our unique Ayam Cemani × White Leghorn cross. Jet black birds with striking white features — they look like something out of a horror movie. Friendly, hardy, and completely one-of-a-kind. Nobody else has these.</p>
+          <div class="price">$50 – $100 / bird</div>
+          <div class="note">Unique cross · One-of-a-kind · Local pickup only</div>
+          <a href="#contact" class="btn-green">Inquire About Availability</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="eggs">
+  <div class="wrap">
+    <h2 class="sec-title">🥚 Hatching Eggs</h2>
+    <div class="divider"></div>
+    <p class="sec-sub">Fertile hatching eggs carefully packaged and shipped nationwide. High hatch rates from our healthy, active flocks.</p>
+    <div class="grid">
+
+      <div class="card">
+        <img src="images/eggs.jpg" alt="Ayam Cemani Hatching Eggs">
+        <div class="card-body">
+          <h3>Ayam Cemani Hatching Eggs</h3>
+          <p>Fertile eggs from our pure Ayam Cemani flock. Each egg carefully inspected, wrapped in bubble wrap, and shipped via priority mail for best hatch rates.</p>
+          <div class="price">$75 – $150 / 6 eggs</div>
+          <div class="note">Ships nationwide via USPS Priority · 6 or 12 egg lots</div>
+          <a href="#contact" class="btn-green">Order Hatching Eggs</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/eggs.jpg" alt="Rhode Island Red Hatching Eggs">
+        <div class="card-body">
+          <h3>Rhode Island Red Hatching Eggs</h3>
+          <p>Fertile hatching eggs from our productive Rhode Island Red flock. High fertility rates confirmed. Great genetics for backyard egg production.</p>
+          <div class="price">$20 – $35 / 12 eggs</div>
+          <div class="note">Ships nationwide · Great hatch rates</div>
+          <a href="#contact" class="btn-green">Order Hatching Eggs</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/zombie.jpg" alt="Zombie Chicken Hatching Eggs">
+        <div class="card-body">
+          <h3>Zombie Chicken Hatching Eggs</h3>
+          <p>Fertile hatching eggs from our Ayam Cemani × Leghorn cross. Hatch something truly unique — no two birds look exactly the same.</p>
+          <div class="price">$30 – $50 / 12 eggs</div>
+          <div class="note">Ships nationwide · Unique hatch</div>
+          <a href="#contact" class="btn-green">Order Hatching Eggs</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="shipping" style="background:white">
+  <div class="wrap">
+    <h2 class="sec-title">📦 Shipping & Pickup</h2>
+    <div class="divider"></div>
+    <div class="ship-grid">
+      <div class="ship-card"><div class="ico">🚗</div><h3>Local Pickup</h3><p>Live birds for local pickup only. Salisbury, NC. Contact us to schedule. Cash or Venmo accepted.</p></div>
+      <div class="ship-card"><div class="ico">📦</div><h3>Hatching Eggs Ship!</h3><p>Hatching eggs ship nationwide via USPS Priority Mail. Individually wrapped in bubble wrap.</p></div>
+      <div class="ship-card"><div class="ico">🐣</div><h3>Live Chick Shipping</h3><p>Day-old chick shipping via USPS Express. Must ship within 24-48 hours of hatching.</p></div>
+      <div class="ship-card"><div class="ico">✅</div><h3>Our Guarantee</h3><p>All eggs from healthy, well-fed birds. We guarantee fertility — contact us if you have any issues.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="background:white">
+  <div class="wrap">
+    <h2 class="sec-title">📸 From Our Coop</h2>
+    <div class="divider"></div>
+    <p class="sec-sub">Real photos from our flock — no stock photos here.</p>
+    <div class="gal">
+      <img src="images/cemani-rooster.jpg" alt="Ayam Cemani Rooster" onclick="ol(this.src)">
+      <img src="images/file_430---3e96bf6e-ef6e-4070-bcea-ddb4509f3d94.jpg" alt="Ayam Cemani" onclick="ol(this.src)">
+      <img src="images/file_410---2a5a157c-1b7f-4c66-b71a-aa33adad55d5.jpg" alt="Ayam Cemani flock" onclick="ol(this.src)">
+      <img src="images/rir.jpg" alt="Rhode Island Red" onclick="ol(this.src)">
+      <img src="images/file_437---857602fb-dff4-4e7a-9471-4221db63898e.jpg" alt="RIR Hens" onclick="ol(this.src)">
+      <img src="images/zombie.jpg" alt="Zombie Chickens" onclick="ol(this.src)">
+      <img src="images/eggs.jpg" alt="Eggs" onclick="ol(this.src)">
+      <img src="images/file_422---faa2ae00-ddf4-4c31-a1b3-6aa3793b951f.jpg" alt="Hatching Eggs" onclick="ol(this.src)">
+      <img src="images/file_418---aca94a6f-e9d9-4cef-971a-f0254a2309da.jpg" alt="Baby Chicks" onclick="ol(this.src)">
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-bg">
+  <div class="wrap">
+    <h2 class="sec-title">📩 Get In Touch</h2>
+    <div class="divider" style="background:#c9962a"></div>
+    <p class="sec-sub">Ready to order? Have questions? We'd love to hear from you.</p>
+    <div class="cg">
+      <div class="ci">
+        <h3>Contact Info</h3>
+        <p>📍 Salisbury, NC<br>🌐 bonnieschickencoop.com<br><br><strong>Available:</strong><br>🐔 Ayam Cemani (local pickup)<br>🐔 Rhode Island Red (local pickup)<br>🧟 Zombie Chickens (local pickup)<br>🥚 Hatching eggs (ships nationwide)<br>🐣 Day-old chicks<br><br><strong>Payment:</strong><br>Cash · Venmo · PayPal</p>
+      </div>
+      <div class="cf">
+        <form onsubmit="fs(event)">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <input type="tel" placeholder="Your Phone">
+          <select>
+            <option value="">What are you interested in?</option>
+            <option>Ayam Cemani — Live Bird</option>
+            <option>Ayam Cemani — Hatching Eggs</option>
+            <option>Rhode Island Red — Live Bird</option>
+            <option>Rhode Island Red — Hatching Eggs</option>
+            <option>Zombie Chickens — Live Bird</option>
+            <option>Zombie Chicken — Hatching Eggs</option>
+            <option>Day-Old Chicks</option>
+            <option>Just have a question</option>
+          </select>
+          <textarea placeholder="Tell us what you're looking for..."></textarea>
+          <button type="submit">Send Message 🐔</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024 Bonnie's Chicken Coop · Salisbury, NC</p>
+  <p style="margin-top:8px;font-size:11px;">Pasture-raised chickens, hatching eggs, and chicks. Local pickup in Rowan County, NC.</p>
+</footer>
+
+<div class="lb" id="lb" onclick="cl()">
+  <div class="lb-x">✕</div>
+  <img id="lbi" src="" alt="">
+</div>
+
+<script>
+function ol(s){document.getElementById('lbi').src=s;document.getElementById('lb').classList.add('open');}
+function cl(){document.getElementById('lb').classList.remove('open');}
+function fs(e){e.preventDefault();alert("Thanks! We'll get back to you within 24 hours. 🐔");e.target.reset();}
+</script>
+
+</body>
+</html>
