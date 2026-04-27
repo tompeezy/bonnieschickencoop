@@ -215,10 +215,10 @@ footer { background: #1a2e10; color: #aaa; text-align: center; padding: 24px; fo
       </div>
       <div class="cf">
         <form action="https://formspree.io/f/mkokaraw" method="POST">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <input type="tel" placeholder="Your Phone">
-          <select>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Your Phone">
+          <select name="interest">
             <option value="">What are you interested in?</option>
             <option>Ayam Cemani — Live Bird</option>
             <option>Ayam Cemani — Hatching Eggs</option>
@@ -229,7 +229,7 @@ footer { background: #1a2e10; color: #aaa; text-align: center; padding: 24px; fo
             <option>Day-Old Chicks</option>
             <option>Just have a question</option>
           </select>
-          <textarea placeholder="Tell us what you're looking for..."></textarea>
+          <textarea name="message" placeholder="Tell us what you're looking for..."></textarea>
           <button type="submit">Send Message 🐔</button>
         </form>
       </div>
