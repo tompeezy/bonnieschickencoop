@@ -214,7 +214,7 @@ footer { background: #1a2e10; color: #aaa; text-align: center; padding: 24px; fo
         <p>📍 Salisbury, NC<br>🌐 bonnieschickencoop.com<br><br><strong>Available:</strong><br>🐔 Ayam Cemani (local pickup)<br>🐔 Rhode Island Red (local pickup)<br>🧟 Zombie Chickens (local pickup)<br>🥚 Hatching eggs (ships nationwide)<br>🐣 Day-old chicks<br><br><strong>Payment:</strong><br>Cash · Venmo · PayPal</p>
       </div>
       <div class="cf">
-        <form onsubmit="fs(event)">
+        <form action="https://formspree.io/f/mkokaraw" method="POST">
           <input type="text" placeholder="Your Name" required>
           <input type="email" placeholder="Your Email" required>
           <input type="tel" placeholder="Your Phone">
@@ -250,7 +250,7 @@ footer { background: #1a2e10; color: #aaa; text-align: center; padding: 24px; fo
 <script>
 function ol(s){document.getElementById('lbi').src=s;document.getElementById('lb').classList.add('open');}
 function cl(){document.getElementById('lb').classList.remove('open');}
-function fs(e){e.preventDefault();alert("Thanks! We'll get back to you within 24 hours. 🐔");e.target.reset();}
+
 </script>
 
 </body>
